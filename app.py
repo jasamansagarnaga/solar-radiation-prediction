@@ -279,3 +279,49 @@ st.divider()
 st.caption(
     "Proyecto Final de Machine Learning - Predicción de Radiación Solar"
 )
+
+st.divider()
+
+st.header("📌 Comparación de Modelos")
+
+metricas = pd.DataFrame({
+
+    "Modelo": [
+        "Random Forest",
+        "AdaBoost",
+        "Gradient Boosting"
+    ],
+
+    "R²": [
+        0.9339,
+        0.9044,
+        0.9315
+    ],
+
+    "RMSE": [
+        81.0326,
+        97.4736,
+        82.4722
+    ]
+
+})
+
+st.table(metricas)
+
+st.header("📌 Conclusiones")
+
+st.write("""
+El modelo Random Forest presentó el mejor desempeño general,
+obteniendo el valor más alto de R² y el menor error RMSE
+en comparación con AdaBoost y Gradient Boosting.
+
+Esto indica una mejor capacidad de generalización y una mayor
+precisión en la predicción de radiación solar.
+
+Por otra parte, AdaBoost y Gradient Boosting también mostraron
+resultados competitivos, aunque con un desempeño ligeramente inferior.
+
+Finalmente, la implementación en Streamlit permitió desarrollar
+una aplicación capaz de generar predicciones
+a partir de nuevos datos ingresados por el usuario.
+""")
